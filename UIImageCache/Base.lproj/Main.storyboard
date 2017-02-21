@@ -1,26 +1,158 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="mUk-hj-IT4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="90e-a2-1N3">
+            <objects>
+                <navigationController id="mUk-hj-IT4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rOj-26-Wat">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="I2L-rU-sJF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pfh-vU-D4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="106"/>
+        </scene>
+        <!--豆瓣美女-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="4rw-Ix-0q6"/>
+                        <viewControllerLayoutGuide type="bottom" id="WEL-Ej-LQN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LxE-do-aQ2">
+                                <rect key="frame" x="10" y="94" width="355" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="c3s-ll-3yW"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ie8-lS-wFw" appends="YES" id="jxR-qM-T9Q"/>
+                                </connections>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="khN-P8-nhM">
+                                <rect key="frame" x="10" y="314" width="355" height="29"/>
+                                <segments>
+                                    <segment title="所有"/>
+                                    <segment title="大胸妹"/>
+                                    <segment title="小翘臀"/>
+                                    <segment title="黑丝袜"/>
+                                    <segment title="美腿控"/>
+                                    <segment title="有颜值"/>
+                                    <segment title="大杂烩"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeType:" destination="BYZ-38-t0r" eventType="valueChanged" id="8ms-9c-Wgm"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKV-Qm-MV8">
+                                <rect key="frame" x="172" y="372" width="31" height="30"/>
+                                <state key="normal" title="开始"/>
+                                <connections>
+                                    <action selector="begin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNC-jE-M6b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGB-O6-Ggb">
+                                <rect key="frame" x="172" y="412" width="31" height="30"/>
+                                <state key="normal" title="暂停"/>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WnG-HU-UCb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前是第0张图片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-II-YcK">
+                                <rect key="frame" x="10" y="462" width="355" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LGB-O6-Ggb" firstAttribute="centerX" secondItem="PKV-Qm-MV8" secondAttribute="centerX" id="513-8F-PDN"/>
+                            <constraint firstItem="khN-P8-nhM" firstAttribute="top" secondItem="LxE-do-aQ2" secondAttribute="bottom" constant="20" id="66K-jX-9Yd"/>
+                            <constraint firstItem="PKV-Qm-MV8" firstAttribute="top" secondItem="khN-P8-nhM" secondAttribute="bottom" constant="30" id="6Uw-1j-Liu"/>
+                            <constraint firstAttribute="trailing" secondItem="LxE-do-aQ2" secondAttribute="trailing" constant="10" id="AmA-AT-7a2"/>
+                            <constraint firstItem="LxE-do-aQ2" firstAttribute="top" secondItem="4rw-Ix-0q6" secondAttribute="bottom" constant="30" id="C6r-9N-79I"/>
+                            <constraint firstItem="LGB-O6-Ggb" firstAttribute="top" secondItem="PKV-Qm-MV8" secondAttribute="bottom" constant="10" id="E1M-zm-RdB"/>
+                            <constraint firstItem="ySR-II-YcK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="KpB-Vw-XlN"/>
+                            <constraint firstItem="LxE-do-aQ2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="YWt-Fg-aU2"/>
+                            <constraint firstItem="khN-P8-nhM" firstAttribute="leading" secondItem="LxE-do-aQ2" secondAttribute="leading" id="gP5-va-jpL"/>
+                            <constraint firstItem="khN-P8-nhM" firstAttribute="trailing" secondItem="LxE-do-aQ2" secondAttribute="trailing" id="gTX-SQ-4tP"/>
+                            <constraint firstItem="PKV-Qm-MV8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lz2-TW-lq2"/>
+                            <constraint firstAttribute="trailing" secondItem="ySR-II-YcK" secondAttribute="trailing" constant="10" id="o0q-ge-ehR"/>
+                            <constraint firstItem="ySR-II-YcK" firstAttribute="top" secondItem="LGB-O6-Ggb" secondAttribute="bottom" constant="20" id="tkH-fr-O2e"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="豆瓣美女" id="JTg-3L-r2R"/>
+                    <connections>
+                        <outlet property="beginBtn" destination="PKV-Qm-MV8" id="gwZ-HZ-eYF"/>
+                        <outlet property="countLabel" destination="ySR-II-YcK" id="Yx3-18-Bzg"/>
+                        <outlet property="imgView" destination="LxE-do-aQ2" id="krk-dR-Ne0"/>
+                        <outlet property="stopBtn" destination="LGB-O6-Ggb" id="ky5-2l-s54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ie8-lS-wFw">
+                    <connections>
+                        <action selector="showBigImage:" destination="BYZ-38-t0r" id="Y1x-qO-ZLq"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="LwU-MU-bt3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-61.5" y="137.5"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="15u-tS-81p">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="8as-Us-8HT" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="38l-0k-Nh9"/>
+                        <viewControllerLayoutGuide type="bottom" id="dsR-rH-qko"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sTY-3C-zJC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9hN-mP-xzP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9hN-mP-xzP" firstAttribute="top" secondItem="38l-0k-Nh9" secondAttribute="bottom" id="K22-Sb-pHL"/>
+                            <constraint firstItem="dsR-rH-qko" firstAttribute="top" secondItem="9hN-mP-xzP" secondAttribute="bottom" id="Vkw-Fe-Nsl"/>
+                            <constraint firstItem="9hN-mP-xzP" firstAttribute="leading" secondItem="sTY-3C-zJC" secondAttribute="leading" id="gcZ-TI-4mD"/>
+                            <constraint firstAttribute="trailing" secondItem="9hN-mP-xzP" secondAttribute="trailing" id="zNs-Ni-dzT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="9hN-mP-xzP" id="0tt-ck-96d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1F5-yg-gi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="138"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
