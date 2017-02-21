@@ -7,3 +7,17 @@
 此Demo的后台数据使用一个[小爬虫](https://github.com/blackmatch/hello-girl)实现，仅供学习使用。
 ###预览
 ![record](./readme/record.gif)
+###测试
+设备：iPhone5S  
+方法：自动播放图片500张以上，对比前后APP占用空间  
+####测试前情况：  
+![before_mem](./readme/before_mem.png)
+![before_mem](./readme/before_app.png)  
+####测试完成情况：
+![500](./readme/500.png)
+![after_mem](./readme/after_mem.png)
+![after_mem](./readme/after_app.png)
+###测试结果分析
+完成测试后，**程序占用的磁盘空间从2.7M变成34.7M**  
+初步结论：**[UIImage imageWithData:]会占用设备的存储空间**  
+进一步探讨：UIImage通过``[UIImage imageWithData:]``实例化对象后是如何存储数据的？有没有限制？之前有网友通过socket以每秒30张图片的频率来实现视频播放，结果十分钟左右就占用了几个G的存储空间，能否进一步证实这个结论？有没有办法不存储图片数据呢？欢迎大家讨论。不足之处还请不吝赐教。
