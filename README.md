@@ -11,12 +11,12 @@
 设备：iPhone5S  
 方法：自动播放图片500张以上，对比前后APP占用空间  
 ####测试前情况：  
-![before_mem](./readme/before_mem.png)
-![before_mem](./readme/before_app.png)  
+![before_mem](./readme/before_mem.PNG)
+![before_mem](./readme/before_app.PNG)  
 ####测试完成情况：
 ![500](./readme/500.png)
-![after_mem](./readme/after_mem.png)
-![after_mem](./readme/after_app.png)
+![after_mem](./readme/after_mem.PNG)
+![after_mem](./readme/after_app.PNG)
 ###测试结果分析
 完成测试后，**程序占用的磁盘空间从2.7M变成34.7M**  
 初步结论：**[UIImage imageWithData:]会占用设备的存储空间**  
