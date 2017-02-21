@@ -14,7 +14,7 @@
 ![before_mem](./readme/before_mem.PNG)
 ![before_mem](./readme/before_app.PNG)  
 ####测试完成情况：
-![500](./readme/500.png)
+![500](./readme/500.PNG)
 ![after_mem](./readme/after_mem.PNG)
 ![after_mem](./readme/after_app.PNG)
 ###测试结果分析
